@@ -8,3 +8,5 @@ spring:
     show-sql: true
 server:
   port: 9099
+  servlet:
+    context-path: /sell

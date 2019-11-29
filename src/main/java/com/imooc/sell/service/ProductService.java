@@ -1,7 +1,6 @@
 package com.imooc.sell.service;
 
 import com.imooc.sell.entity.ProductInfo;
-import org.graalvm.compiler.lir.alloc.lsra.LinearScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
