@@ -7,7 +7,10 @@ import com.imooc.sell.entity.ProductCategory;
 import com.imooc.sell.entity.ProductInfo;
 import com.imooc.sell.service.CategoryService;
 import com.imooc.sell.service.ProductService;
+import com.imooc.sell.utils.ResultUtil;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +24,7 @@ import java.util.stream.Collectors;
  * 用户商品
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/buyer/product")
 public class BuyerProductController {
 
@@ -61,27 +65,30 @@ public class BuyerProductController {
             productVO.setCategoryName(productCategory.getCategoryName());
 
             List<ProductInfoVO> productInfoVOList = new ArrayList<>();
-            for (ProductInfo productInfo : productInfoList
-                 ) {
-                ProductInfoVO productInfoVO = new ProductInfoVO();
-                productInfoVO.setProductId(productInfo.getProductId());
-                productInfoVO.setProductName(productInfo.getProductName());
-                productInfoVO.setProductPrice(productInfo.getProductPrice());
-                productInfoVO.setProductDescription(productInfo.getProductDescription());
-                productInfoVO.setProductIcon(productInfo.getProductIcon());
-                productInfoVOList.add(productInfoVO);
+            for (ProductInfo productInfo : productInfoList) {
+                if (productInfo.getCategoryType().equals(productCategory.getCategoryType())){
+
+                    ProductInfoVO productInfoVO = new ProductInfoVO();
+
+                    //传统方法
+                    /*productInfoVO.setProductId(productInfo.getProductId());
+                    productInfoVO.setProductName(productInfo.getProductName());
+                    productInfoVO.setProductPrice(productInfo.getProductPrice());
+                    productInfoVO.setProductDescription(productInfo.getProductDescription());
+                    productInfoVO.setProductIcon(productInfo.getProductIcon());*/
+
+                    //spring提供的方法
+                    BeanUtils.copyProperties(productInfo,productInfoVO);
+                    productInfoVOList.add(productInfoVO);
+                }
+
             }
             productVO.setCategoryFoods(productInfoVOList);
+
+            productVOList.add(productVO);
         }
 
-        ResultVO resultVO = new ResultVO();
-        //resultVO.setData();
-
-        resultVO.setCode(0);
-        resultVO.setMsg("成功");
-        resultVO.setData(Arrays.asList());
-
-        return resultVO;
+        return ResultUtil.success(productVOList);
     }
 
 }
