@@ -2,21 +2,21 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50620
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : sell
 
 Target Server Type    : MYSQL
-Target Server Version : 50620
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-11-25 17:36:52
+Date: 2019-12-01 22:15:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for order_detail
+-- Table structure for `order_detail`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_detail`;
 CREATE TABLE `order_detail` (
@@ -36,7 +36,7 @@ CREATE TABLE `order_detail` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for order_master
+-- Table structure for `order_master`
 -- ----------------------------
 DROP TABLE IF EXISTS `order_master`;
 CREATE TABLE `order_master` (
@@ -59,7 +59,7 @@ CREATE TABLE `order_master` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for product_category
+-- Table structure for `product_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `product_category`;
 CREATE TABLE `product_category` (
@@ -79,7 +79,7 @@ INSERT INTO `product_category` VALUES ('1', '热销榜', '1', '2019-11-25 10:55:
 INSERT INTO `product_category` VALUES ('14', '今日特价', '6', '2019-11-25 14:55:54', '2019-11-25 14:55:54');
 
 -- ----------------------------
--- Table structure for product_info
+-- Table structure for `product_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `product_info`;
 CREATE TABLE `product_info` (
@@ -100,9 +100,10 @@ CREATE TABLE `product_info` (
 -- Records of product_info
 -- ----------------------------
 INSERT INTO `product_info` VALUES ('19001', '鸡蛋饼', '5.50', '20', '新鲜的鸡蛋饼', 'xxx.png', '0', '1', null, null);
+INSERT INTO `product_info` VALUES ('19002', '青椒肉丝', '13.00', '50', '好吃的青椒肉丝！', 'xxxx.png', '0', '6', '2019-12-01 13:43:08', '2019-12-01 13:43:08');
 
 -- ----------------------------
--- Table structure for seller_info
+-- Table structure for `seller_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `seller_info`;
 CREATE TABLE `seller_info` (
