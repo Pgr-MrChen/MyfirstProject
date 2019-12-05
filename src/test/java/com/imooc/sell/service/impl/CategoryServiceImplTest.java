@@ -2,6 +2,7 @@ package com.imooc.sell.service.impl;
 
 
 import com.imooc.sell.entity.ProductCategory;
+import com.imooc.sell.service.ProductService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

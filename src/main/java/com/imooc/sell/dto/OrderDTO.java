@@ -1,25 +1,16 @@
-package com.imooc.sell.entity;
+package com.imooc.sell.dto;
 
+import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
-
-
-/**
- * 主订单信息
- */
-@Entity
 @Data
-@DynamicUpdate
-public class OrderMaster {
-
-    @Id
+public class OrderDTO {
     private String orderId;
 
     private String buyerName;
@@ -44,4 +35,5 @@ public class OrderMaster {
 
     private Date updateTime;
 
+    List<OrderDetail> orderDetailList;
 }
