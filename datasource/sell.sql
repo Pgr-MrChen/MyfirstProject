@@ -2,21 +2,21 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50717
+Source Server Version : 50620
 Source Host           : localhost:3306
 Source Database       : sell
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2019-12-01 22:15:30
+Date: 2019-12-05 17:24:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `order_detail`
+-- Table structure for order_detail
 -- ----------------------------
 DROP TABLE IF EXISTS `order_detail`;
 CREATE TABLE `order_detail` (
@@ -34,9 +34,11 @@ CREATE TABLE `order_detail` (
 -- ----------------------------
 -- Records of order_detail
 -- ----------------------------
+INSERT INTO `order_detail` VALUES ('1001', '001', '19001', '鸡蛋饼', '5.50', '5', 'xxx.png');
+INSERT INTO `order_detail` VALUES ('1002', '002', '19002', '青椒肉丝', '13.00', '3', 'xxxx.png');
 
 -- ----------------------------
--- Table structure for `order_master`
+-- Table structure for order_master
 -- ----------------------------
 DROP TABLE IF EXISTS `order_master`;
 CREATE TABLE `order_master` (
@@ -57,9 +59,11 @@ CREATE TABLE `order_master` (
 -- ----------------------------
 -- Records of order_master
 -- ----------------------------
+INSERT INTO `order_master` VALUES ('001', '小栋', '12345678910', '重庆孵化室', '123456', '30.00', '0', '0', '2019-12-05 10:30:15', '2019-12-05 10:30:15');
+INSERT INTO `order_master` VALUES ('002', '小栋', '12345678910', '重庆孵化室', '123456', '20.00', '0', '0', '2019-12-05 10:33:33', '2019-12-05 10:33:33');
 
 -- ----------------------------
--- Table structure for `product_category`
+-- Table structure for product_category
 -- ----------------------------
 DROP TABLE IF EXISTS `product_category`;
 CREATE TABLE `product_category` (
@@ -79,7 +83,7 @@ INSERT INTO `product_category` VALUES ('1', '热销榜', '1', '2019-11-25 10:55:
 INSERT INTO `product_category` VALUES ('14', '今日特价', '6', '2019-11-25 14:55:54', '2019-11-25 14:55:54');
 
 -- ----------------------------
--- Table structure for `product_info`
+-- Table structure for product_info
 -- ----------------------------
 DROP TABLE IF EXISTS `product_info`;
 CREATE TABLE `product_info` (
@@ -103,7 +107,7 @@ INSERT INTO `product_info` VALUES ('19001', '鸡蛋饼', '5.50', '20', '新鲜�
 INSERT INTO `product_info` VALUES ('19002', '青椒肉丝', '13.00', '50', '好吃的青椒肉丝！', 'xxxx.png', '0', '6', '2019-12-01 13:43:08', '2019-12-01 13:43:08');
 
 -- ----------------------------
--- Table structure for `seller_info`
+-- Table structure for seller_info
 -- ----------------------------
 DROP TABLE IF EXISTS `seller_info`;
 CREATE TABLE `seller_info` (
