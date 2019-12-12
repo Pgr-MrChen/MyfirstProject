@@ -10,7 +10,6 @@ import com.imooc.sell.entity.OrderMaster;
 import com.imooc.sell.entity.ProductInfo;
 import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
-import com.imooc.sell.service.CategoryService;
 import com.imooc.sell.service.OrderService;
 import com.imooc.sell.service.ProductService;
 import com.imooc.sell.utils.KeyUtil;

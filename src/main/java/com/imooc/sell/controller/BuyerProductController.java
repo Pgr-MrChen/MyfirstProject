@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,8 +47,7 @@ public class BuyerProductController {
         for (ProductInfo productInfo:productInfoList
              ) {
             categoryTypeList.add(productInfo.getCategoryType());
-        }
-*/
+        }*/
         //精简方法(java8,lambda表达式)
         List<Integer> categoryTypeList = productInfoList.stream()
                 .map(e -> e.getCategoryType())
