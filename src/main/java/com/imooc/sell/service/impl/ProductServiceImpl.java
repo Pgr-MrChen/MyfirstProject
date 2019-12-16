@@ -45,11 +45,22 @@ public class ProductServiceImpl implements ProductService {
         return productInfoDao.save(productInfo);
     }
 
+    //加库存
     @Override
     public void increaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO : cartDTOList) {
+            ProductInfo productInfo = productInfoDao.findById(cartDTO.getProductId()).get();
+            if (productInfo == null) {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
 
+            Integer result = productInfo.getProductStock()+cartDTO.getProductQuantity();
+            productInfo.setProductStock(result);
+            productInfoDao.save(productInfo);
+        }
     }
 
+    //减库存
     @Override
     @Transactional
     public void decreaseStock(List<CartDTO> cartDTOList) {

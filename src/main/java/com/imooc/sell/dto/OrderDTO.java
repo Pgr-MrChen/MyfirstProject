@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 订单DTO
+ */
 @Data
 public class OrderDTO {
     private String orderId;

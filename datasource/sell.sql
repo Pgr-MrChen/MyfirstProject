@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2019-12-05 17:24:47
+Date: 2019-12-16 17:30:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,8 +34,9 @@ CREATE TABLE `order_detail` (
 -- ----------------------------
 -- Records of order_detail
 -- ----------------------------
-INSERT INTO `order_detail` VALUES ('1001', '001', '19001', '鸡蛋饼', '5.50', '5', 'xxx.png');
-INSERT INTO `order_detail` VALUES ('1002', '002', '19002', '青椒肉丝', '13.00', '3', 'xxxx.png');
+INSERT INTO `order_detail` VALUES ('1576463681183383865', '1576463681093696433', '19001', '鸡蛋饼', '5.50', '2', 'xxx.png');
+INSERT INTO `order_detail` VALUES ('1576464854709468296', '1576464854631769120', '19001', '鸡蛋饼', '5.50', '2', 'xxx.png');
+INSERT INTO `order_detail` VALUES ('1576464854736588905', '1576464854631769120', '19002', '青椒肉丝', '13.00', '1', 'xxxx.png');
 
 -- ----------------------------
 -- Table structure for order_master
@@ -59,8 +60,8 @@ CREATE TABLE `order_master` (
 -- ----------------------------
 -- Records of order_master
 -- ----------------------------
-INSERT INTO `order_master` VALUES ('001', '小栋', '12345678910', '重庆孵化室', '123456', '30.00', '0', '0', '2019-12-05 10:30:15', '2019-12-05 10:30:15');
-INSERT INTO `order_master` VALUES ('002', '小栋', '12345678910', '重庆孵化室', '123456', '20.00', '0', '0', '2019-12-05 10:33:33', '2019-12-05 10:33:33');
+INSERT INTO `order_master` VALUES ('1576463681093696433', '小明', '13245645451', '重庆渝北', '123456', '11.00', '0', '0', '2019-12-16 10:34:41', '2019-12-16 10:34:41');
+INSERT INTO `order_master` VALUES ('1576464854631769120', '小明', '13245645451', '重庆渝北', '123456', '24.00', '0', '1', '2019-12-16 17:27:37', '2019-12-16 17:27:37');
 
 -- ----------------------------
 -- Table structure for product_category
@@ -103,8 +104,8 @@ CREATE TABLE `product_info` (
 -- ----------------------------
 -- Records of product_info
 -- ----------------------------
-INSERT INTO `product_info` VALUES ('19001', '鸡蛋饼', '5.50', '20', '新鲜的鸡蛋饼', 'xxx.png', '0', '1', null, null);
-INSERT INTO `product_info` VALUES ('19002', '青椒肉丝', '13.00', '50', '好吃的青椒肉丝！', 'xxxx.png', '0', '6', '2019-12-01 13:43:08', '2019-12-01 13:43:08');
+INSERT INTO `product_info` VALUES ('19001', '鸡蛋饼', '5.50', '24', '新鲜的鸡蛋饼', 'xxx.png', '0', '1', '2019-12-16 16:28:03', '2019-12-16 16:28:03');
+INSERT INTO `product_info` VALUES ('19002', '青椒肉丝', '13.00', '53', '好吃的青椒肉丝！', 'xxxx.png', '0', '6', '2019-12-16 16:28:03', '2019-12-16 16:28:03');
 
 -- ----------------------------
 -- Table structure for seller_info
